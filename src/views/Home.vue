@@ -1,12 +1,6 @@
 <template>
   <div class="home">
     <main-layout>
-      <main-header @openMenu='menuIsOpen = true'/>
-
-      <main-layout class="layout-menu" v-if="menuIsOpen">
-        <main-menu @closedMenu='menuIsOpen = false' />
-      </main-layout>
-
       <main-content/>
     </main-layout>
   </div>
@@ -22,11 +16,6 @@ import MainLayout from '../layouts/MainLayout.vue'
 export default {
   name: 'Home',
 
-  data() {
-    return {
-      menuIsOpen: false
-    }
-  },
   components: { MainLayout, MainHeader, MainMenu, MainContent },
 
 }
@@ -34,9 +23,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.layout-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
+
 </style>

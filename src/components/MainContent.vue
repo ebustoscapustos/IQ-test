@@ -188,12 +188,14 @@ export default {
 
     .wrapper {
         position: relative;
-    }
-
-    &__fourth {
         background-image: url('../assets/images/fourth.jpg');
         background-repeat: no-repeat;
         background-position: center;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    &__fourth {
         font-family: 'Merriweather', sans-serif;
         font-size: 15px;
         padding: 55px 15px;
@@ -213,7 +215,7 @@ export default {
         &__window {
             padding: 30px 15px;
             margin: 30px 0;
-            background-color: rgba(255, 255, 255, 1);
+            background-color: rgba(243, 243, 242, 0.8);
             border-radius: 20px;
             line-height: 23px;
             font-size: 16px;
@@ -238,6 +240,24 @@ export default {
         background-repeat: no-repeat;
         position: absolute;
         background-size: cover;
+        z-index: -1;
+        transform: rotate(20deg);
+        right: -60px;
+        top: 15%;
+    }
+
+     &__fourth::after {
+        content: '';
+        width: 165px;
+        height: 165px;
+        background-image: url('../assets/images/lighting.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        background-size: cover;
+        z-index: -1;
+        transform: rotate(-30deg);
+        left: -60px;
+        bottom: 15%;
     }
 }
 </style>
