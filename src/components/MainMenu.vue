@@ -17,9 +17,15 @@
     </div>
     <div class="menu__content">
       <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Информация о тесте</a></li>
-        <li><a href="#">Пройти тест</a></li>
+        <router-link :to="{path: '/'}">
+          <li @click="switchMenuStatus"><a href="#">Главная</a></li>
+        </router-link>
+        <router-link :to="{path: '/'}">
+          <li @click="switchMenuStatus"><a href="#">Информация о тесте</a></li>
+        </router-link>
+        <router-link :to="{path: '/test'}">
+          <li @click="switchMenuStatus"><a href="#">Пройти тест</a></li>
+        </router-link>
       </ul>
     </div>
     <div class="menu__footer"></div>

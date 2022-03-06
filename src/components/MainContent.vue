@@ -5,7 +5,9 @@
                 <p>Пройдите точный и быстрый</p>
                 <h1>Тест на <br>определение <br>IQ</h1>
             </div>
-            <app-button buttonText="Пройти тест"/>
+            <router-link :to="{path: '/test'}">
+                <app-button buttonText="Пройти тест"/>
+            </router-link>
             <div class="content__first__text">
                 <p class="text-one">И получите рекомендации по развитию своего интеллекта</p>
                 <p class="text-two">и улучшению финансового благосостояния и личной жизни</p>
