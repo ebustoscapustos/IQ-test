@@ -18,13 +18,13 @@
     <div class="menu__content">
       <ul>
         <router-link :to="{path: '/'}">
-          <li @click="switchMenuStatus"><a href="#">Главная</a></li>
+          <li @click="transitionHome"><a href="#">Главная</a></li>
         </router-link>
         <router-link :to="{path: '/'}">
-          <li @click="switchMenuStatus"><a href="#">Информация о тесте</a></li>
+          <li @click="transitionHome"><a href="#">Информация о тесте</a></li>
         </router-link>
         <router-link :to="{path: '/test'}">
-          <li @click="switchMenuStatus"><a href="#">Пройти тест</a></li>
+          <li @click="transitionTest"><a href="#">Пройти тест</a></li>
         </router-link>
       </ul>
     </div>
@@ -40,8 +40,17 @@ export default {
 
   methods: {
       ...mapMutations([
-          'switchMenuStatus'
-      ])
+          'switchMenuStatus',
+          'switchTestStartedStatus'
+      ]),
+      transitionTest() {
+        this.switchTestStartedStatus(true)
+        this.switchMenuStatus()
+      },
+      transitionHome() {
+        this.switchTestStartedStatus(false)
+        this.switchMenuStatus()
+      }
   }
 };
 </script>
@@ -75,6 +84,10 @@ export default {
       li {
         margin: 30px 0;
       }
+
+      a:active {
+        color: #ffc700;
+      } 
 
       a {
         text-decoration: none;

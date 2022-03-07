@@ -31,17 +31,17 @@ export default {
                     {
                         text: 'от 18 до 28',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         text: 'от 29 до 35',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         text: 'от 36',
                         selected: false,
-                        value: 1
+                        value: 4
                     }
                 ]
             },
@@ -53,27 +53,27 @@ export default {
                     {
                         text: 'дом',
                         selected: false,
-                        value: 1
+                        value: -3
                     },
                     {
                         text: 'шалаш',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         text: 'бунгало',
                         selected: false,
-                        value: 1
+                        value: -1
                     },
                     {
                         text: 'скамейка',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         text: 'хижина',
                         selected: false,
-                        value: 1
+                        value: 0
                     }
                 ]
             },
@@ -85,32 +85,32 @@ export default {
                     {
                         text: '62',
                         selected: false,
-                        value: 1
+                        value: -2
                     },
                     {
                         text: '48',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         text: '74',
                         selected: false,
-                        value: 1
+                        value: 5
                     },
                     {
                         text: '57',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         text: '60',
                         selected: false,
-                        value: 1
+                        value: -3
                     },
                     {
                         text: '77',
                         selected: false,
-                        value: 1
+                        value: 0
                     }
                 ]
             },
@@ -122,42 +122,42 @@ export default {
                     {
                         color: '#A8A8A8',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         color: '#0000A9',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         color: '#00A701',
                         selected: false,
-                        value: 1
+                        value: -2
                     },
                     {
                         color: '#F60100',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         color: '#FDFF19',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         color: '#A95403',
                         selected: false,
-                        value: 1
+                        value: 5
                     },
                     {
                         color: '#000000',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         color: '#850068',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         color: '#46B2AC',
@@ -174,7 +174,7 @@ export default {
                     {
                         color: '#A8A8A8',
                         selected: false,
-                        value: 1
+                        value: -1
                     },
                     {
                         color: '#46B2AC',
@@ -184,17 +184,17 @@ export default {
                     {
                         color: '#A95403',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         color: '#00A701',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         color: '#000000',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         color: '#F60100',
@@ -204,17 +204,17 @@ export default {
                     {
                         color: '#850068',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         color: '#FDFF19',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         color: '#0000A9',
                         selected: false,
-                        value: 1
+                        value: -2
                     }
                 ]
             },
@@ -226,12 +226,12 @@ export default {
                     {
                         text: 'Вашингтон',
                         selected: false,
-                        value: 1
+                        value: -3
                     },
                     {
                         text: 'Лондон',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         text: 'Париж',
@@ -241,17 +241,17 @@ export default {
                     {
                         text: 'Нью-Йорк',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         text: 'Москва',
                         selected: false,
-                        value: 1
+                        value: 4
                     },
                     {
                         text: 'Оттава',
                         selected: false,
-                        value: 1
+                        value: 0
                     }
                 ]
             },
@@ -269,17 +269,17 @@ export default {
                     {
                         text: '2',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         text: '3',
                         selected: false,
-                        value: 1
+                        value: -1
                     },
                     {
                         text: '4',
                         selected: false,
-                        value: 1
+                        value: 0
                     }
                 ],
                 otherStyle: true
@@ -292,17 +292,17 @@ export default {
                     {
                         text: 'Наслаждаться каждой минутой проведенного времени',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         text: 'Быть устремленными мыслями в будущее',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         text: 'Учитывать в ежедневной практике прошлый опыт',
                         selected: false,
-                        value: 1
+                        value: -2
                     }
                 ]
             },
@@ -315,17 +315,17 @@ export default {
                     {
                         text: 'оно остроконечное',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         text: 'оно устойчиво',
                         selected: false,
-                        value: 1
+                        value: 4
                     },
                     {
                         text: 'оно-находится в состоянии равновесия',
                         selected: false,
-                        value: 1
+                        value: 0
                     }
                 ]
             },
@@ -338,32 +338,32 @@ export default {
                     {
                         text: '34',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         text: '36',
                         selected: false,
-                        value: 1
+                        value: 3
                     },
                     {
                         text: '53',
                         selected: false,
-                        value: 1
+                        value: 4
                     },
                     {
                         text: '44',
                         selected: false,
-                        value: 1
+                        value: 0
                     },
                     {
                         text: '66',
                         selected: false,
-                        value: 1
+                        value: 2
                     },
                     {
                         text: '42',
                         selected: false,
-                        value: 1
+                        value: -1
                     }
                 ],
                 otherStyle: true
@@ -371,9 +371,26 @@ export default {
         ],
 
         counter: 1,
-        progress: 0
+        progress: 0,
+        testStarted: false,
+        testCompleted: false,
+        score: 0
     },
     mutations: {
+        updateScore(state, payload) {
+            if (state.testData[payload - 1].options !== undefined) {
+                state.testData[payload - 1].options.forEach(item => {
+                    if (item.selected) state.score += item.value
+                })
+            } else {
+                state.testData[payload - 1].colors.forEach(item => {
+                    if (item.selected) state.score += item.value
+                })
+            }
+            if (state.score < 1) state.score = 1
+
+        },
+
         updateProgress(state) {
             state.progress = 100 / 11 * state.counter
         },
@@ -410,6 +427,17 @@ export default {
         },
         updateCounter(state) {
             state.counter = state.counter + 1
+            if (state.counter > 12) state.counter = 1
+        },
+
+        switchTestStartedStatus(state, payload) {
+            state.testStarted = payload
+            state.testCompleted = false
+            state.progress = 0
+            state.score = 0
+        },
+        switchTestCompletedStatus(state, payload) {
+            state.testCompleted = payload
         }
     },
     actions: {
@@ -426,7 +454,16 @@ export default {
             return state.counter
         },
         getProgress(state) {
-           return state.progress
+            return state.progress
+        },
+        testStarted(state) {
+            return state.testStarted
+        },
+        testCompleted(state) {
+            return state.testCompleted
+        },
+        getScore(state) {
+            return state.score
         }
     }
 }

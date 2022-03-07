@@ -45,13 +45,14 @@ export default {
   },
 
   computed: {
-    ...mapGetters(['getCounter'])
+    ...mapGetters(['getCounter',])
   },
  
   methods: {
-      ...mapMutations(['updateCounter', 'updateProgress']),
+      ...mapMutations(['updateCounter', 'updateProgress', 'updateScore']),
       next() {
           this.updateProgress()
+          this.updateScore(this.cardData.id)
           this.updateCounter()
       },
 
