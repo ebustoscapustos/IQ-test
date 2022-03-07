@@ -85,16 +85,17 @@ export default {
 
     .complete {
         font-size: 20px;
+        margin: 0;
     }
 
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
     .header {
 
         &__title {
-            margin-left: 100px;
+            margin-left: 60px;
         }
     }
 }
