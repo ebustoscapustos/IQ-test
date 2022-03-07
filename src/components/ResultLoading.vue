@@ -47,8 +47,8 @@ export default {
 
         setTimeout(() => {
 			this.$router.push('/result')
-          	this.updateCounter()
 			this.switchTestCompletedStatus(true)
+          	this.updateCounter()
         }, 3000);
       }
     },
