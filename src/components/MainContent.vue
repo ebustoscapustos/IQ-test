@@ -5,9 +5,7 @@
                 <p>Пройдите точный и быстрый</p>
                 <h1>Тест на <br>определение <br>IQ</h1>
             </div>
-            <router-link :to="{path: '/test'}">
-                <app-button buttonText="Пройти тест"/>
-            </router-link>
+             <app-button buttonText="Пройти тест" @click="transitionTest"/>
             <div class="content__first__text">
                 <p class="text-one">И получите рекомендации по развитию своего интеллекта</p>
                 <p class="text-two">и улучшению финансового благосостояния и личной жизни</p>
@@ -25,7 +23,7 @@
                 Также по результатам теста <span class="uppercase">вы получите</span> подробные <span class="uppercase">советы</span> по определению наиболее перспективной <span class="uppercase">для вашего типа <span class="lowercase">интеллекта</span> сферы деятельности,</span> которая принесет вам скорейший финансовый результат.
             </p>
             <div class="content__third__image"></div>
-            <app-button buttonText="Пройти тест"/>
+            <app-button buttonText="Пройти тест" @click="transitionTest"/>
         </div>
         <div class="wrapper">
             <div class="content__fourth">
@@ -35,7 +33,7 @@
                 <div class="content__fourth__window">
                     <p class="text">Профессиональная интерпретация и детально <span>проработанные рекомендации</span> позволят вам качественно <span>изменить все аспекты своей жизни:</span> от финансового до любовного.</p>
                 </div>
-                <app-button buttonText="Пройти тест" :transparency="false"/>
+                <app-button buttonText="Пройти тест" :transparency="false" @click="transitionTest"/>
                 <div class="content__fourth__copyright">© 2019</div>
             </div>
         </div>
@@ -44,9 +42,17 @@
 
 <script>
 import AppButton from './AppButton.vue'
+import {mapMutations} from 'vuex'
 export default {
   components: { AppButton },
     name: "MainContent",
+    methods: {
+        ...mapMutations(['switchTestStartedStatus',]),
+        transitionTest() {
+        this.switchTestStartedStatus(true)
+        this.$router.push('/test')
+      },
+    }
 }
 </script>
 
@@ -162,6 +168,7 @@ export default {
         padding: 40px 10px;
         font-family: 'PT Serif', sans-serif;
         font-size: 16px;
+        background-color: #fff;
 
         &__text {
             letter-spacing: 0.05em;

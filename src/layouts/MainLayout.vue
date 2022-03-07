@@ -30,6 +30,9 @@ export default {
 .main-layout {
   text-align: center;
   width: 100%;
+  background-image: url('../assets/images/layout.jpg');
+  background-position: center;
+  background-size: cover;
 }
 .content {
   padding: 0 calc(50% - 295px);

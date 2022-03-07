@@ -13,17 +13,21 @@
         />
       </svg>
     </div>
-    <div v-if="1 === 0" class="header__title">
-      <h1 v-if="1 === 0">тест на определение IQ</h1>
-      <h1 class="complete" v-if="1 === 1">Готово!</h1>
+    <div v-if="testStarted" class="header__title">
+      <h1 v-if="!testCompleted">тест на определение IQ</h1>
+      <h1 class="complete" v-if="getCounter === 1 && testCompleted">Готово!</h1>
     </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 export default {
   name: "MainHeader",
+
+  computed: {
+    ...mapGetters(['testStarted', 'getCounter', 'testCompleted'])
+  },
 
   methods: {
     ...mapMutations(["switchMenuStatus"]),
