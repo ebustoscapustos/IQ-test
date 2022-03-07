@@ -1,8 +1,6 @@
 <template>
-  <div class="test-card">
-    <div class="progress-bar">
-      <div class="progress-bar__now"></div>
-    </div>
+  <div class="test-card" v-if="cardData.id === getCounter">
+    <progress-bar/>
     <div class="test-card__content">
       <h1 class="question">{{ cardData.title }}</h1>
       <img
@@ -13,17 +11,12 @@
         class="options"
         :class="{ 'options-other-style': cardData.otherStyle }"
       >
-        <li
-          class="options__item"
-          v-for="option in cardData.options"
-          :key="option"
-        >
-          <p>{{ option }}</p>
-        </li>
+        <option-item v-for="option in cardData.options"
+          :key="option" :option="option" :otherStyle='cardData.otherStyle' :cardId='cardData.id' @select='switchBtnStatus'/>
       </ul>
       <div class="colors-wrap" v-if="cardData.colors">
           <div class="colors">
-              <div class="item" v-for="color in cardData.colors" :key="color" :style="{background: color}"></div>
+              <color-item v-for="color in cardData.colors" :key="color" :color='color' :cardId='cardData.id' @select='switchBtnStatus'/>
           </div>
       </div>
     </div>
@@ -33,22 +26,37 @@
 
 <script>
 import AppButton from "./AppButton.vue";
+import ColorItem from './ColorItem.vue';
+import OptionItem from './OptionItem.vue';
+import ProgressBar from './ProgressBar.vue';
+import {mapGetters, mapMutations} from 'vuex'
 export default {
     data() {
         return {
             btnEnabled: false
         }
     },
-  components: { AppButton },
+  components: { AppButton, OptionItem, ColorItem, ProgressBar },
   props: {
     cardData: {
       type: Object,
       default: () => {},
     },
   },
+
+  computed: {
+    ...mapGetters(['getCounter'])
+  },
+ 
   methods: {
+      ...mapMutations(['updateCounter', 'updateProgress']),
       next() {
-          console.log('next')
+          this.updateProgress()
+          this.updateCounter()
+      },
+
+      switchBtnStatus(value) {
+        this.btnEnabled = value
       }
   }
 };
@@ -60,29 +68,16 @@ export default {
   font-size: 18px;
   color: #fff;
   background-image: url("../assets/images/fourth.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 45px);
+  max-height: calc(100vh - 45px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   letter-spacing: 0.05em;
-
-  .progress-bar {
-    height: 10px;
-    margin: 15px;
-    width: 90%;
-    background-color: grey;
-    border-radius: 10px;
-
-    &__now {
-      height: 100%;
-      background-color: #3bde7c;
-      width: 20%;
-      border-radius: inherit;
-    }
-  }
 
   &__content {
     width: 100%;
@@ -109,11 +104,6 @@ export default {
         grid-template-rows: repeat(3, 1fr);
         display: grid;
         grid-gap: 20px;
-
-        .item {
-            width: 100%;
-            height: 100%;
-        }
     }
 
     .question {
@@ -124,36 +114,6 @@ export default {
     .options {
       list-style-type: none;
       padding: 0;
-
-      &__item {
-        background-color: rgba(255, 255, 255, 0.3);
-        margin: 10px 0;
-        padding: 15px 0;
-        text-align: left;
-        position: relative;
-        cursor: pointer;
-
-        p {
-          margin: 0;
-          margin-left: 95px;
-          margin-right: 10px;
-        }
-
-        p::before {
-          content: "";
-          width: 20px;
-          height: 20px;
-          border: 1px solid #fff;
-          border-radius: 50%;
-          position: absolute;
-          left: 35px;
-          top: calc(50% - 10px);
-        }
-      }
-
-      &__item:active {
-          background-color: #3bde7c;
-      }
     }
 
     .options-other-style {
@@ -161,30 +121,10 @@ export default {
       margin: 20px auto;
       justify-content: space-between;
       max-width: 360px;
-
-      li {
-        width: 41px;
-        height: 41px;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #fff;
-        color: #000;
-      }
-
-      p {
-        margin: 0;
-      }
-
-      p::before {
-        content: none;
-      }
     }
 
     img {
-      max-width: calc(100% - 90px);
+      max-width: calc(100% - 125px);
     }
   }
 
